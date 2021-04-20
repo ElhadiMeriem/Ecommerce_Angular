@@ -24,6 +24,6 @@ Concernant l’Administrateur, il peut :
 * Gérer les produits (Ajouter, modifier le produit, télécharger et modifier l’image d’un produit).
 * S’authentifier.
 <p  align="center">
-<IMG SRC="assets/images/logo.png" width=400>
+<IMG SRC="app/3.PNG" width=400>
 </p>
   
