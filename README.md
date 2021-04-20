@@ -77,7 +77,50 @@ Vous devez spécifier votre informations personnelles, l’adresse, le numéro t
 Confirmer La commande| Login
 ------------ | -------------
  <IMG SRC="app/7.PNG" width=800>  | <IMG SRC="app/451.PNG" width=800>
-Lorsque vous confirmer la commande, la date est automatiquement affectée..|Pour s’authentifier comme admin utiliser comme username : admin, password :1234.
+Lorsque vous confirmer la commande, la date est automatiquement affectée.|Pour s’authentifier comme admin utiliser comme username : admin, password :1234.
   
+  
+  
+Modifier le produit| Modifier les informations de produit.
+------------ | -------------
+ <IMG SRC="app/78.PNG" width=800>  | <IMG SRC="app/452.PNG" width=800>
+Cette page est pour admin il contient deux boutons une pour modifier les informations de produit, et une pour modifier l’image de produits.|Cette page est pour admin il contient deux boutons une pour modifier les informations de produit, et une pour modifier l’image de produits
+  
+ Modifier l’image de produit
+------------ |
+ <IMG SRC="app/4512.PNG" width=800>  | 
+Pour modifier l’image d’un produit, vous choisissez l’image dans votre ordinateur et faire upload pour télécharger l’image.|
+  
+ My Contact
+=============
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/ElhadiMeriem/)
+
+You can get in touch with me on my LinkedIn Profile:  https://www.linkedin.com/in/meriem-elhadi-574784189/
+
+You can also follow my GitHub Profile to stay updated about my latest projects: [![GitHub followers](https://img.shields.io/github/followers/ElhadiMeriem.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/ElhadiMeriem/)
+
+
+If you liked the repo then please support it by giving it a star ⭐!
+
+
+Issues
+=============
+[![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://GitHub.com/ElhadiMeriem/Ecommerce_Angular/issues/)
+
+If you face any issue, you can create a new issue in the Issues Tab and I will be glad to help you out.
+
+
+License
+=============
+
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+
+Copyright (c) 2018-present, ElhadiMeriem
+
+
+
+ 
+</p>
+ 
   
   
