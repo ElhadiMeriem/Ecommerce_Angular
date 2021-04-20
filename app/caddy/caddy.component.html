@@ -1,0 +1,150 @@
+<header class="header shop">
+  <div class="header-inner">
+    <div class="container">
+      <div class="cat-nav-head">
+        <div class="row">
+
+<div class="col-lg-9 col-12">
+  <div class="menu-area">
+    <!-- Main Menu -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="navbar-collapse">	
+        <div class="nav-inner">	
+          <ul class="nav main-menu menu navbar-nav">
+              <li ><a class="clickable" (click)="onSelectedProducts()">Home</a></li>
+              <li><a class="clickable" (click)="onProductsPromo()">Promotion</a></li>												
+              <li><a class="clickable" (click)="onProductsDispo()">Disponibles</a></li>
+              <li><a href="#">Blog<i class="ti-angle-down"></i><span class="new">New</span></a></li>
+              <li class="active"><a routerLink="/caddy">Card </a></li>	
+              <div class="right-bar">
+                <div class="sinlge-bar shopping">
+                  <a routerLink="/caddy" class="single-icon"><i class="ti-bag"></i> <span class="total-count">
+                                      {{caddyService.getSize()}}</span></a>
+                
+                </div>
+                  </div>								
+              <li><a routerLink="/contact">Contact Us</a></li>
+                
+            </ul>
+        </div>
+      </div>
+    </nav>
+    <!--/ End Main Menu -->	
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="bread-inner">
+          <ul class="bread-list">
+            <li><a href="">Home<i class="ti-arrow-right"></i></a></li>
+            <li class="active"><a routerLink="/caddy">Cart</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <ul class="nav nav-pills">
+      <li>
+        <button (click)="onAddCaddy()" class="btn btn-danger">
+          <span class="glyphicon glyphicon-plus pull-right"></span>
+        </button>
+      </li>
+      <li [ngClass]="c.name==caddyService.currentCaddyName?'active':''" *ngFor="let c of caddyService.listCaddies">
+        <a class="btn" (click)="onSelectCaddy(c)">{{c.name}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="shopping-cart section" *ngIf="caddy.items">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <!-- Shopping Summery -->
+        <table class="table shopping-summery">
+          <thead>
+            <tr class="main-hading">
+              <th>PRODUCT</th>
+              <th>NAME</th>
+              <th class="text-center">QUANTITY</th>
+              <th class="text-center">TOTAL</th> 
+              <th class="text-center"><i class="ti-trash remove-icon"></i></th>
+            </tr>
+          </thead>
+          <tbody>
+          
+            <tr *ngFor="let item of caddy.items|keyvalue">
+              <td class="price" data-title="Price"><span>{{item.value.id}} </span></td>
+
+              <td class="product-des" data-title="Description">
+                <p class="product-name"><a href="#">{{item.value.name}}</a></p>
+              </td>
+              <td class="price" data-title="Price"><span>{{item.value.quantity|number:'0.2'}} </span></td>
+              <td class="price" data-title="Price"><span>{{item.value.price|number:'0.2'}} </span></td>
+
+              
+              <td class="action" data-title="Remove"><a href="#"><i (click)="onRemoveProductFromCaddy(item.value)" class="ti-trash remove-icon"></i></a></td>
+            </tr>
+            
+          </tbody>
+        </table>
+        <!--/ End Shopping Summery -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <!-- Total Amount -->
+        <div class="total-amount">
+          <div class="row">
+            <div class="col-lg-8 col-md-5 col-12">
+              <div class="left">
+                <div class="coupon">
+                  <form action="#" target="_blank">
+                    <input name="Coupon" placeholder="Enter Your Coupon">
+                    <button class="btn">Apply</button>
+                  </form>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-7 col-12">
+              <div class="right">
+                <ul>
+                  <li>Cart Subtotal<span>{{getTotal()|number:'0.2'}}</span></li>
+                  <li>Shipping<span>Free</span></li>
+                  <li>You Save<span>$20.00</span></li>
+                  <li class="last">You Pay<span>{{getTotal()|number:'0.2'}}</span></li>
+                </ul>
+                <div class="button5">
+                  <a (click)="onNewOrder()" class="btn">Checkout</a>
+                  <a  (click)="onSelectedProducts()" class="btn">Continue shopping</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/ End Total Amount -->
+      </div>
+    </div>
+  </div>
+</div>

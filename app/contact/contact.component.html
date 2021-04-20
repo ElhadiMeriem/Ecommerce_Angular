@@ -1,0 +1,122 @@
+<header class="header shop">
+	<div class="header-inner">
+	  <div class="container">
+		<div class="cat-nav-head">
+		  <div class="row">
+  
+  <div class="col-lg-9 col-12">
+	<div class="menu-area">
+	  <!-- Main Menu -->
+	  <nav class="navbar navbar-expand-lg">
+		<div class="navbar-collapse">	
+		  <div class="nav-inner">	
+			<ul class="nav main-menu menu navbar-nav">
+				<li ><a class="clickable" (click)="onSelectedProducts()">Home</a></li>
+				<li><a class="clickable" (click)="onProductsPromo()">Promotion</a></li>												
+				<li><a class="clickable" (click)="onProductsDispo()">Disponibles</a></li>
+				<li><a href="#">Blog<i class="ti-angle-down"></i><span class="new">New</span></a></li>
+				<li ><a routerLink="/caddy">Card </a></li>									
+				<li class="active"><a routerLink="/contact">Contact Us</a></li>
+				  
+			  </ul>
+		  </div>
+		</div>
+	  </nav>
+	  <!--/ End Main Menu -->	
+	</div>
+  </div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </header>
+  <section id="contact-us" class="contact-us section">
+		<div class="container">
+				<div class="contact-head">
+					<div class="row">
+						<div [hidden]="submitted"  class="col-lg-8 col-12">
+							<div class="form-main">
+								<div class="title">
+									<h4>Get in touch</h4>
+									<h3>Write us a message</h3>
+								</div>
+								<form  (ngSubmit)="onSubmit()" class="form" >
+									<div class="row">
+										<div class="col-lg-6 col-12">
+											<div class="form-group">
+												<label>Your Name<span>*</span></label>
+												<input type="text" class="form-control" id="name" required [(ngModel)]="contact.name" name="name">
+											</div>
+										</div>
+										<div class="col-lg-6 col-12">
+											<div class="form-group">
+												<label>Your Subjects<span>*</span></label>
+												<input type="text" class="form-control" id="subject" required [(ngModel)]="contact.subject" name="subject">
+											</div>
+										</div>
+										<div class="col-lg-6 col-12">
+											<div class="form-group">
+												<label>Your Email<span>*</span></label>
+												<input type="text" class="form-control" id="email" required [(ngModel)]="contact.email" name="email">
+											</div>	
+										</div>
+										<div class="col-lg-6 col-12">
+											<div class="form-group">
+												<label>Your Phone<span>*</span></label>
+												<input type="text" class="form-control" id="phoneNumber" required [(ngModel)]="contact.phoneNumber" name="phoneNumber">
+											</div>	
+										</div>
+										<div class="col-12">
+											<div class="form-group message">
+												<label>your message<span>*</span></label>
+												<textarea type="text" class="form-control" id="message" required [(ngModel)]="contact.message" name="message"></textarea>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="form-group button">
+												<button type="submit" class="btn ">Send Message</button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div [hidden]="!submitted">
+							<h4>You submitted successfully!</h4>
+						  </div>
+						<div class="col-lg-4 col-12">
+							<div class="single-head">
+								<div class="single-info">
+									<i class="fa fa-phone"></i>
+									<h4 class="title">Call us Now:</h4>
+									<ul>
+										<li>+212 691 411 991</li>
+										<li>+212 666-137-436</li>
+									</ul>
+								</div>
+								<div class="single-info">
+									<i class="fa fa-envelope-open"></i>
+									<h4 class="title">Email:</h4>
+									<ul>
+										<li><a href="mailto:me.elhadimi@gmail.com">me.elhadimi@gmail.com</a></li>
+										<li><a href="mailto:meriem.broderie@gmail.com">meriem.borderie@gmail.col</a></li>
+									</ul>
+								</div>
+								<div class="single-info">
+									<i class="fa fa-location-arrow"></i>
+									<h4 class="title">Our Address:</h4>
+									<ul>
+										<li>KA-62/1, Sedri Street , 45 Grand Central Terminal, Morrocco.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+  </section>
+  
+
+  <div class="map-section">
+		<app-map></app-map>
+	</div>

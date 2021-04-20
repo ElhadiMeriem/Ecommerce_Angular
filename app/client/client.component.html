@@ -1,0 +1,198 @@
+<header class="header shop">
+  <div class="header-inner">
+    <div class="container">
+      <div class="cat-nav-head">
+        <div class="row">
+
+<div class="col-lg-9 col-12">
+  <div class="menu-area">
+    <!-- Main Menu -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="navbar-collapse">	
+        <div class="nav-inner">	
+          <ul class="nav main-menu menu navbar-nav">
+              <li ><a class="clickable" (click)="onSelectedProducts()">Home</a></li>
+              <li><a class="clickable" (click)="onProductsPromo()">Promotion</a></li>												
+              <li><a class="clickable" (click)="onProductsDispo()">Disponibles</a></li>
+              <li><a href="#">Blog<i class="ti-angle-down"></i><span class="new">New</span></a></li>
+              <li class="active"><a routerLink="/caddy">Card </a></li>	
+              <div class="right-bar">
+                <div class="sinlge-bar shopping">
+                  <a routerLink="/caddy" class="single-icon"><i class="ti-bag"></i> <span class="total-count">
+                                      {{caddyService.getSize()}}</span></a>
+                
+                </div>
+                  </div>								
+              <li><a routerLink="/contact">Contact Us</a></li>
+                
+            </ul>
+        </div>
+      </div>
+    </nav>
+    <!--/ End Main Menu -->	
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section class="shop checkout section">
+  <div class="container">
+    <div class="row" *ngIf="mode==0"> 
+      <div class="col-lg-8 col-12" >
+        <div class="checkout-form">
+          <h2>Make Your Checkout Here</h2>
+          <p>Please register in order to checkout more quickly</p>
+          <!-- Form -->
+            
+
+
+
+
+  <form #f="ngForm" (ngSubmit)="onSaveClient(f.value)">
+    <div class="row">
+
+    <div class="col-lg-6 col-md-6 col-12">
+       <div class="form-group">
+      <label class="control-label">Name:</label>
+      <input type="text" name="name" ngModel class="form-control" [(ngModel)]="caddyService.getCaddy().client.name">
+       </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-12">
+
+       <div class="form-group">
+      <label class="control-label">Address:</label>
+      <input type="text" name="address" ngModel class="form-control" [(ngModel)]="caddyService.getCaddy().client.address">
+       </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-12">
+
+      <div class="form-group">
+        <label class="control-label">Phone number:</label>
+        <input type="text" name="phoneNumber" ngModel class="form-control" [(ngModel)]="caddyService.getCaddy().client.phoneNumber">
+    </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-12">
+
+      <div class="form-group">
+        <label class="control-label">Email:</label>
+        <input type="text" name="email" ngModel class="form-control" [(ngModel)]="caddyService.getCaddy().client.email">
+      </div>
+      </div>
+      
+          <button type="submit" class="btn btn-warning">Proceed To Checkout</button>
+
+        
+    </div>
+  </form>
+        </div>
+      </div>
+
+
+  <div class="col-lg-4 col-12">
+    <div class="order-details">
+      <!-- Order Widget -->
+      <div class="single-widget">
+        <h2>CART  TOTALS</h2>
+        <div class="content">
+          <ul>
+            <li>Sub Total<span>{{getTotal()|number:'0.2'}}</span></li>
+            <li>(+) Shipping<span>0</span></li>
+            <li class="last">Total<span>{{getTotal()|number:'0.2'}}</span></li>
+          </ul>
+        </div>
+      </div>
+      <!--/ End Order Widget -->
+      <!-- Order Widget -->
+      <div class="single-widget">
+        <h2>Payments</h2>
+        <div class="content">
+          <div class="checkbox">
+            <label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox"> Cash On Delivery</label>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+</div>
+</div>
+</section>
+
+
+
+<div class="panel {{panelStyle}}" *ngIf="mode==1">
+  <div class="panel-body">
+    <div class="col-md-5">
+      <div class="form-group">
+        <label>Nom du Client :</label>
+        <label>{{orderService.order.client.name}}</label>
+      </div>
+      <div class="form-group">
+        <label>Adresse Client :</label>
+        <label>{{orderService.order.client.address}}</label>
+      </div>
+      <div class="form-group">
+        <label>Tel Client :</label>
+        <label>{{orderService.order.client.phoneNumber}}</label>
+      </div>
+      <div class="form-group">
+        <label>Email :</label>
+        <label>{{orderService.order.client.email}}</label>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="form-group">
+        <label>Order ID :</label>
+        <label>{{orderService.order.id}}</label>
+      </div>
+      <div class="form-group">
+        <label>Order Date :</label>
+        <label>{{orderService.order.date}}</label>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="panel-body">
+  
+    <table class="table shopping-summery">
+      <thead>
+        <tr class="main-hading">
+          <th>ID</th>
+          <th>NAME</th>
+          <th class="text-center">QUANTITY</th>
+          <th class="text-center">TOTAL</th> 
+        </tr>
+      </thead>
+      <tbody>
+      
+        <tr *ngFor="let p of orderService.order.products">
+          <td class="price" data-title="Price"><span>{{p.id}} </span></td>
+
+          <td class="product-des" data-title="Description">
+            <p class="product-name"><a href="#">{{p.name}}</a></p>
+          </td>
+          <td class="price" data-title="Price"><span>{{p.quantity|number:'0.2'}} </span></td>
+          <td class="price" data-title="Price"><span>{{p.price|number:'0.2'}} </span></td>
+
+          
+        </tr>
+        <tr>
+          <td colspan="3">Total:</td>
+          <td>{{orderService.getTotal()|number:'0.2'}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+    <button class="btn btn-warning" (click)="onOrder()" *ngIf="!orderService.order.id">Confirmer la commande</button>
+    <button class="btn btn-success"  *ngIf="orderService.order.id">Votre Commande est Enregistrée</button>
+  </div>
+</div>
