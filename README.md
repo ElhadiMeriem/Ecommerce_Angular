@@ -34,5 +34,10 @@ Concernant l’Administrateur, il peut :
 
 Page d’accueil  | Produits en promotions
 ------------ | -------------
- <IMG SRC="app/11.PNG" width=400>  | <IMG SRC="app/23.PNG" width=800>
+ <IMG SRC="app/11.PNG" width=800>  | <IMG SRC="app/23.PNG" width=800>
 Cette page contient deux barres de navigation, la première contient le logo de l’application, une barre de recherche et deux icones un pour le panier et l’autre pour s’authentifier. La deuxième barre contient la liste de catégorie, et d’autres paramètre pour naviguer. Concernant le centre de l’application, il contient les produits par toutes les catégories. | Si on clique sur promotion qui se trouve dans la barre de navigation, tous les produits qui sont en promotion seront affiché. Les images de produits en promotions contiennent un sticker bleu nommée promotion.
+
+Produits disponibles | produits selon la catégorie
+------------ | -------------
+ <IMG SRC="app/4.PNG" width=800>  | <IMG SRC="app/5.PNG" width=800>
+Si on clique sur disponible qui se trouve dans la barre de navigation, tous les produits qui sont disponible seront affiché. Les images de ces produits contiennent un sticker rouge nommée available. | Il existe 7 catégories, vous pouvez spécifier la catégorie que vous voulez et les produits seront affichée.
