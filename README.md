@@ -11,7 +11,7 @@ Description de projet
 
 Dans le cadre de la préparation du projet de fin de module « Développement de l’application web » à l’école nationale supérieure des arts et des métiers pour l’année universitaire 2020/2021, j’ai réalisé une application web « Meriem Broderie » pour vendre mes propres designs de broderie. 
 
-:man: User Classes 
+:octocat: User Classes 
 =============
 L’application supportent deux acteurs : l’utilisateur de l’application et l’admin. Pour l’utilisateur il peut :
 * Consulter tous les produits (en promotion, disponibles, par catégorie, par mot clé).
@@ -23,3 +23,7 @@ L’application supportent deux acteurs : l’utilisateur de l’application et 
 Concernant l’Administrateur, il peut :
 * Gérer les produits (Ajouter, modifier le produit, télécharger et modifier l’image d’un produit).
 * S’authentifier.
+<p  align="center">
+<IMG SRC="assets/images/logo.png" width=400>
+</p>
+  
